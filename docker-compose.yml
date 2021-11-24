@@ -1,0 +1,15 @@
+version: "3"
+services:
+  rpi-imager:
+    build: ./
+    image: rpi-imager
+    container_name: rpi-imager
+    environment:
+      - DISPLAY=$DISPLAY
+    network_mode: "host"
+    privileged: true
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${HOME}/.Xauthority:/root/.Xauthority
+      - ${PWD}:/root/images
+    restart: "no"
