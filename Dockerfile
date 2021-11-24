@@ -23,4 +23,4 @@ RUN apt-get update && \
     dpkg -i /tmp/imager_latest_amd64.deb && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-    ENTRYPOINT ["rpi-imager"]
+ENTRYPOINT ["rpi-imager"]
